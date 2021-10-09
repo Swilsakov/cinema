@@ -34,7 +34,7 @@ class MovieListView(APIView):
 
 class MovieDetail(APIView):
     def get(self, request, pk):
-        movie = Movie.objects.get(id=pk, drast=False)
+        movie = Movie.objects.get(id=pk, draft=False)
         serializer = MovieSerializer(movie)
         return Response(serializer.data)
 
